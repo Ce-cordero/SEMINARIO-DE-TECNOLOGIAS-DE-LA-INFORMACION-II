@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Three.js FIX</title>
+  <style>
+    body { margin: 0; overflow: hidden; }
+  </style>
+
+  <!-- 🔥 ESTO SOLUCIONA TODO -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js",
+      "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/"
+    }
+  }
+  </script>
+
+</head>
+<body>
+
+<script type="module" src="./escena1.js"></script>
+
+</body>
+</html>
