@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Proyecto Three.js</title>
+
+  <style>
+    body { margin: 0; overflow: hidden; }
+    #menu {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+    }
+  </style>
+
+  <!-- 🔥 IMPORTMAP GLOBAL -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+<div id="menu">
+  <button onclick="cargar('brazo.js')">Brazo</button>
+  <button onclick="cargar('sistemaSolar.js')">Sistema Solar</button>
+  <button onclick="cargar('criatura.js')">Criatura</button>
+</div>
+
+<script>
+function cargar(archivo) {
+  // borrar canvas anterior
+  document.querySelectorAll("canvas").forEach(c => c.remove());
+
+  // 🔥 FORZAR RECARGA
+  import(`./${archivo}?v=${Date.now()}`);
+}
+</script>
+
+</body>
+</html>
